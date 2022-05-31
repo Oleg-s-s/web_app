@@ -7,7 +7,15 @@
 {% block content %}
     <div class="features">
         <h1>News</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos ratione velit eligendi molestias quidem, qui, possimus eveniet, fugiat aspernatur quisquam itaque est magni. Non ab dolor magnam iure, ex omnis.</p>
-        <button class="btn btn-warning">Go to about</button>
+        {% if news %}
+        {% for i in news %}
+            <div class="alert alert-warning">
+                <h3>{{ i.title }}</h3>
+                <p>{{ i.anons }}</p>
+            </div>
+        {% endfor %}
+        {% else %}
+            <p>No news</p>
+        {% endif %}
     </div>
 {% endblock content %}
