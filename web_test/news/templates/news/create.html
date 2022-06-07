@@ -9,11 +9,11 @@
         <h1>Adding new posts</h1>
         <form method="post">
             {% csrf_token %}
-            <input type="text" placeholder="Name of the post" class="form-control"><br>
-            <input type="text" placeholder="Short description" class="form-control"><br>
-            <textarea class="form-control" placeholder="Type text here..."></textarea><br>
-            <input type="date" class="form-control"><br>
-            <input type="time" class="form-control"><br>
+            {{ form.title }}<br>
+            {{ form.anons }}<br>
+            {{ form.full_text }}<br>
+            {{ form.date }}<br>
+            <span>{{ error }}</span>
             <button class="btn btn-success" type="submit">Add post</button>
         </form>
     </div>
